@@ -1,4 +1,3 @@
-import entities.Book;
 import entities.EBook;
 import entities.PaperBook;
 import entities.User;
@@ -17,9 +16,13 @@ public class Main {
         PaperBook paperBook = new PaperBook();
         paperBook.setTitle("Title");
         paperBook.setInStock("url");
+        User user = new User();
+        user.setName("lol");
+        book.addUser(user);
         em.getTransaction().begin();
         em.persist(book);
         em.persist(paperBook);
+        em.persist(user);
         em.getTransaction().commit();
     }
 }
